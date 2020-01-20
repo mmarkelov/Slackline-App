@@ -16,7 +16,7 @@ const UnitConverter = lazy(() => import('../UnitConverter/Loadable'));
 const TraditionalTensionCalculator = lazy(() =>
   import('../TraditionalTensionCalculator'),
 );
-const SpiritLevel = lazy(() => import('../SpiritLevel/Loadable'));
+
 const Gyro = lazy(() => import('../Gyro'));
 const LengthMeasurer = lazy(() => import('../LengthMeasurer/Loadable'));
 
@@ -31,7 +31,6 @@ const App: React.FC = () => {
           path={'/traditional-tension-calculator'}
           component={TraditionalTensionCalculator}
         />
-        <Route path={'/spirit-level'} component={SpiritLevel} />
         <Route path={'/length-measurer'} component={LengthMeasurer} />
 
         {/* <Route path={'/webbing-charts'} component={WebbingCharts} /> */}

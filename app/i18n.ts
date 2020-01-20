@@ -7,6 +7,7 @@
  *   script `extract-intl`, and must use CommonJS module syntax
  *   You CANNOT use import/export in this file.
  */
+// TODO Move to new react-intl version
 const addLocaleData = require('react-intl').addLocaleData;
 const enLocaleData = require('react-intl/locale-data/en');
 const deLocaleData = require('react-intl/locale-data/de');
