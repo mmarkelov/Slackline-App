@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { isSafari } from 'react-device-detect';
 
-import { AppAnalytics } from 'aws/analytics';
 import { useDeviceOrientation } from './useDeviceOrientation';
 import { Utils } from 'utils/index';
 

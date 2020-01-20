@@ -11,7 +11,6 @@ import { Helmet } from 'react-helmet';
 import AppBackgroundContainer from 'components/AppBackgroundContainer';
 import { Description } from './Description';
 import Portal from 'components/Modal';
-import { Camera } from './Camera';
 import { LengthMeasurerHelmet } from 'components/DocumentHeaders/LengthMeasurerHelmet';
 import { TextInput } from 'components/TextInput';
 import { useInput } from 'utils/hooks/useInput';
@@ -24,8 +23,6 @@ const storageKey = 'length-measurer-length';
 interface Props {}
 
 export default function LengthMeasurer(props: Props) {
-
-  const [isCameraActive, setIsCameraActive] = useState(false);
   const [isDescriptionOpen, setIsDescriptionOpen] = useState(false);
 
   useCheckDeviceOrientation();
@@ -60,14 +57,6 @@ export default function LengthMeasurer(props: Props) {
       }
     });
     document.documentElement.requestFullscreen();
-    setIsCameraActive(true);
-  }
-
-  function cancelCamera() {
-    if (document.fullscreenElement) {
-      document.exitFullscreen();
-    }
-    setIsCameraActive(false);
   }
 
   function descriptionToggled(open: boolean) {
@@ -79,7 +68,6 @@ export default function LengthMeasurer(props: Props) {
       <LengthMeasurerHelmet />
       <AppBackgroundContainer showBackButton>
         <Wrapper>
-          {!isCameraActive ? (
             <React.Fragment>
               <Header>
                 <HeaderIcon iconType="length_measurer" />
@@ -107,9 +95,6 @@ export default function LengthMeasurer(props: Props) {
                 Open Camera
               </CustomButton>
             </React.Fragment>
-          ) : (
-            <Camera closeClicked={cancelCamera} knownDistance={length!} />
-          )}
         </Wrapper>
       </AppBackgroundContainer>
     </React.Fragment>

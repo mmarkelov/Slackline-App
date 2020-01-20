@@ -38,7 +38,7 @@ const MOUNT_NODE = document.getElementById('app') as HTMLElement;
 
 const render = (messages: any, Component = App) => {
   ReactDOM.render(
-    // tslint:disable-next-line:jsx-wrap-multiline
+    // tslint:disable-next-line
     <Provider store={store}>
       <ThemeProvider>
         <ConnectedRouter history={history}>
