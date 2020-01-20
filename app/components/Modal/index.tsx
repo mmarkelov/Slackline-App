@@ -3,7 +3,6 @@ import { createPortal } from 'react-dom';
 import usePortal from './usePortal';
 import styled from 'styles/styled-components';
 import { cover } from 'polished';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'; // ES6
 
 interface Props {
   id?: string;
