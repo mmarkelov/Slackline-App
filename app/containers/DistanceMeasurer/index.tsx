@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from 'react';
 import AppBackgroundContainer from 'components/AppBackgroundContainer';
 import styled, { ThemeContext } from 'styles/styled-components';
 import media from 'styles/media';
-import { useVisitAnalytics } from 'utils/hooks/analytics';
 import { DistanceMeasurerHelmet } from 'components/DocumentHeaders/DistanceMeasurerHelmet';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import turfLineString from 'turf-linestring';
@@ -38,7 +37,6 @@ interface SelectedPoint {
 }
 
 export default function DistanceMeasurer() {
-  useVisitAnalytics('distance_measurer_visit');
   const savedViewport = JSON.parse(getStorageItem(viewportStorageKey) || '{}');
 
   const [viewport, setViewport] = useState({

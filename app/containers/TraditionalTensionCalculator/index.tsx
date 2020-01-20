@@ -12,10 +12,8 @@ import DrawingMobileSVG from './drawing_mobile.svg';
 import { convertLength } from 'components/Converter/Length/formula';
 import { convertMass } from 'components/Converter/Mass/formula';
 import { Helmet } from 'react-helmet';
-import { useVisitAnalytics } from 'utils/hooks/analytics';
 
 export default function TraditionalTensionCalculator() {
-  useVisitAnalytics('traditional_tension_calculator_visit');
 
   const [length, setLength] = useState(50);
   const [weight, setWeight] = useState(75);

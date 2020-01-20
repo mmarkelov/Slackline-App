@@ -10,7 +10,6 @@ import { push } from 'connected-react-router';
 import { isMobile } from 'react-device-detect';
 import { MainPageSectionItem } from './types';
 import { MainPageSection } from 'components/MainPageListItem/Section';
-import { useVisitAnalytics } from 'utils/hooks/analytics';
 import { AddHomeButtonToolTip } from 'components/Tooltips/AddHomeButtonTooltip';
 import { HomepageHelmet } from 'components/DocumentHeaders/HomepageHelmet';
 import { touchableOpacity, elevatedShadow } from 'styles/mixins';
@@ -28,7 +27,6 @@ export default function HomePage(props: Props) {
   const [deferredPrompt, setDeferredPrompt] = useState();
 
   const dispatch = useDispatch();
-  useVisitAnalytics('main_page_visit');
 
   useEffect(() => {
     if (Utils.isInStandaloneMode()) {

@@ -15,7 +15,6 @@ import { Camera } from './Camera';
 import { LengthMeasurerHelmet } from 'components/DocumentHeaders/LengthMeasurerHelmet';
 import { TextInput } from 'components/TextInput';
 import { useInput } from 'utils/hooks/useInput';
-import { useVisitAnalytics } from 'utils/hooks/analytics';
 import { useCheckDeviceOrientation } from 'utils/hooks/useCheckDeviceOrientation';
 import { Utils } from 'utils/index';
 
@@ -25,7 +24,6 @@ const storageKey = 'length-measurer-length';
 interface Props {}
 
 export default function LengthMeasurer(props: Props) {
-  useVisitAnalytics('length_measurer_visit');
 
   const [isCameraActive, setIsCameraActive] = useState(false);
   const [isDescriptionOpen, setIsDescriptionOpen] = useState(false);

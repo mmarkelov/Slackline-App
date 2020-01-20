@@ -19,7 +19,6 @@ import { Measure } from './Measure';
 import { getStorageItem, setStorageItem } from 'utils/storage';
 import { isMobile } from 'react-device-detect';
 import { useDeviceOrientation } from 'utils/hooks/useDeviceOrientation';
-import { useVisitAnalytics } from 'utils/hooks/analytics';
 import { useCheckDeviceOrientation } from 'utils/hooks/useCheckDeviceOrientation';
 import { Utils } from 'utils/index';
 import { TensionCalculatorHelmet } from 'components/DocumentHeaders/TensionCalculatorHelmet';
@@ -28,7 +27,6 @@ import { TensionCalculatorHelmet } from 'components/DocumentHeaders/TensionCalcu
 const weightKey = 'tension-calculator-weight';
 
 export default function TensionCalculator() {
-  useVisitAnalytics('tension_calculator_visit');
 
   const defaultWeight = parseInt(getStorageItem(weightKey) || '75', 10);
   const [weight, setWeight] = useState(defaultWeight);
